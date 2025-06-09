@@ -1,0 +1,73 @@
+/* Tailwind is loaded via CDN in HTML */
+/* Custom CSS for the snow effect */
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  background-color: #000;
+}
+
+/* Container for snowflakes */
+#snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  animation: snowfall linear infinite;
+  filter: blur(0.5px);
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10%) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+/* General styling for cards and sections */
+.card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
